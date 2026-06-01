@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Prediction Result</h1>
+            <p>Vegetable health status and suggested solution.</p>
+        </header>
+
+        <section class="results result-page-card">
+            <div id="resultPageContent"></div>
+            <div class="history-panel">
+                <h3>Recent Predictions</h3>
+                <div id="historyList"></div>
+            </div>
+            <div class="controls result-actions">
+                <button id="downloadReportBtn" class="btn primary" type="button">Download Report</button>
+                <a href="index.html" class="btn secondary">Back to Upload</a>
+            </div>
+        </section>
+    </div>
+
+    <script src="result.js" defer></script>
+</body>
+</html>

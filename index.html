@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vegetable Disease Detection</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Vegetable Disease Detection</h1>
+        <p>Upload a leaf image and get prediction + confidence.</p>
+    </header>
+
+    <div class="upload-section">
+        <input type="file" id="imageUpload" accept="image/*">
+
+        <div class="image-preview">
+            <video id="cameraPreview" width="300" height="300" autoplay playsinline class="hidden"></video>
+            <canvas id="previewCanvas" width="300" height="300"></canvas>
+        </div>
+
+        <div class="controls">
+            <button id="startCameraBtn" class="btn secondary" type="button">Start Camera</button>
+            <button id="captureBtn" class="btn secondary" type="button">Capture Photo</button>
+            <button id="predictBtn" class="btn primary" type="button">Predict Disease</button>
+            <button id="clearBtn" class="btn secondary" type="button">Clear Result</button>
+        </div>
+    </div>
+
+    <div id="result" class="results"></div>
+    <div class="results history-panel">
+        <h3>Recent Predictions</h3>
+        <div id="indexHistoryList"></div>
+        <div class="controls result-actions">
+            <button id="clearHistoryBtn" class="btn secondary" type="button">Clear History</button>
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

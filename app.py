@@ -125,13 +125,6 @@ def load_trained_model():
             print("Model Loaded Successfully")
             print("Output Shape:", model.output_shape)
             print("Class Count:", len(CLASSES))
-            if model.output_shape[-1] != len(CLASSES):
-                print(
-                    "Warning: model output classes and label classes mismatch:",
-                    model.output_shape[-1],
-                    "!=",
-                    len(CLASSES),
-                )
 
         else:
             print("Model File Not Found")
@@ -139,6 +132,14 @@ def load_trained_model():
     except Exception as e:
         print("Model Load Error:", str(e))
 
+
+# =========================
+# APP STARTUP FOR RENDER
+# =========================
+
+CLASSES = load_classes()
+init_db()
+load_trained_model()
 
 
 # IMAGE PREPROCES
@@ -379,13 +380,14 @@ def predict():
 
 # RUN
 if __name__ == "__main__":
+    import os
+
     print("Starting Vegetable Disease Detection Server")
-    init_db()
-    CLASSES = load_classes()
-    load_trained_model()
+
+    port = int(os.environ.get("PORT", 5000))
 
     app.run(
         host="0.0.0.0",
-        port=5000,
-        debug=True
+        port=port,
+        debug=False
     )
